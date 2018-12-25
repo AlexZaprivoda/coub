@@ -1,0 +1,156 @@
+body > * {
+    margin: 0;
+}
+
+.container{
+    display: flex;
+}
+
+input{
+    display: none;
+}
+
+input + label{
+    background-color: rgba(0, 255, 64, 0.568);
+    height: 20px;
+    width: 75px;
+    border-radius: 20px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+input:checked + label{
+    background-color: rgba(255, 8, 0, 0.568);
+    color: whitesmoke;
+}
+
+.front{
+    width: 50px;
+    height: 50px;
+    background-color: rgba(79, 185, 53, 0.479);
+}
+
+.top{
+    width: 50px;
+    height: 20px;
+    background-color: rgba(240, 221, 53, 0.397);
+    transform: skewX(-40deg);
+    margin-left: 8px;
+}
+
+.rSide{
+    width: 17px;
+    height: 50px;
+    background-color: rgba(228, 78, 67, 0.397);
+    transform: skewY(-50deg) translateY(-20%);
+}
+
+.bottom{
+    width: 50px;
+    height: 20px;
+    background-color: rgba(5, 77, 231, 0.212);
+    transform: skewX(-40deg) translateX(-67%) translateY(150%);    
+}
+
+.lSide{
+    width: 17px;
+    height: 50px;
+    background-color: rgba(5, 186, 231, 0.212);
+    transform: skewY(-50deg) translateY(-299%) translateX(-688%);
+}
+
+.back{
+    width: 50px;
+    height: 50px;
+    background-color: rgba(227, 231, 5, 0.349);
+    transform: translateY(-40%) translateX(-234%);
+}
+
+input:checked + label + div + div div.bottom{
+    animation: runB 3s ease-out 50ms infinite;
+}
+
+input:checked + label + div + div div.lSide{
+    animation: runL 3s ease-out 50ms infinite;
+}
+
+input:checked + label + div + div div.rSide{
+    animation: runR 3s ease-out 50ms infinite;
+}
+
+input:checked + label + div {
+    animation: runTop 3s ease-out 50ms infinite;
+}
+
+input:checked + label + div + div div.front{
+    animation: runFront 3s ease-out 50ms infinite;
+}
+
+input:checked + label + div + div div.back{
+    animation: runBack 3s ease-out 50ms infinite;
+}
+
+@keyframes runB{
+    from{
+        transform: skewX(-40deg) translateX(-67%) translateY(150%) scale(0);
+    }
+    to{
+        transform: skewX(-40deg) translateX(-67%) translateY(150%) scale(1);
+    }
+}
+
+@keyframes runL{
+    from{
+        transform: skewY(-50deg) translateY(-299%) translateX(-688%) scale(0);
+    }
+    to{
+        transform: skewY(-50deg) translateY(-299%) translateX(-688%) scale(1);
+    }
+}
+
+@keyframes runR{
+    from{
+        transform: skewY(-50deg) translateY(-20%) scale(0);
+    }
+    to{
+        transform: skewY(-50deg) translateY(-20%) scale(1);
+    }
+}
+
+@keyframes runB{
+    from{
+        transform: skewX(-40deg) translateX(-67%) translateY(150%) scale(0);
+    }
+    to{
+        transform: skewX(-40deg) translateX(-67%) translateY(150%) scale(1);
+    }
+}
+
+@keyframes runTop{
+    from{
+        transform: skewX(-40deg) scale(0);
+    }
+    to{
+        transform: skewX(-40deg) scale(1);
+    }
+}
+
+@keyframes runFront{
+    from{
+        transform: scale(0);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+
+@keyframes runBack{
+    from{
+        transform: translateY(-40%) translateX(-234%) scale(0);
+    }
+    to{
+        transform: translateY(-40%) translateX(-234%) scale(1);
+    }
+}
